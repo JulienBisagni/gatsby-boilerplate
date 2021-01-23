@@ -1,0 +1,13 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.icon {
+    font-size: $font-size-icon;
+    color: currentColor;
+    &.--right {
+        margin-left: $gutter-size/4;
+    }
+    &.--left {
+        margin-right: $gutter-size/4;
+    }
+}
