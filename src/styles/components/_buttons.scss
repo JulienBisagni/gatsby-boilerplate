@@ -1,0 +1,101 @@
+%disabled {
+    background-color: $color-2-20;
+    color: $color-1;
+    box-shadow: none;
+    cursor: default;
+    &:hover {
+        box-shadow: none;
+        opacity: 1;
+    }
+    &:active {
+        transform: none;
+    }
+}
+
+Button {
+    background: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.btn {
+    @extend %transition;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border-radius: $border-radius-button;
+    color: $color-text;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-button;
+    text-align: center;
+    padding: $gutter-size/2 $gutter-size/1.5;
+    cursor: pointer;
+    &:disabled {
+        @extend %disabled;
+    }
+    &:active {
+        transform: translateY(1px);
+    }
+    &:hover {
+        box-shadow: $box-shadow-button;
+        opacity: $opacity-hover;
+    }
+
+    &.--primary {
+        background-color: $color-1;
+        color: $color-1;
+    }
+
+    &.--secondary {
+        color: $color-1;
+        background: $color-1;
+    }
+
+    &.--disabled {
+        @extend %disabled;
+    }
+
+    &.--text {
+        background-color: transparent;
+        @extend %transition;
+        &:hover,
+        &:active {
+            color: $color-1;
+            box-shadow: none;
+            opacity: $opacity-hover;
+        }
+    }
+
+    &.--scroll-to-top {
+        @extend %transition;
+        @include align-horizontally(fixed, $gutter-size);
+        @include flexbox();
+        @include blurry($color: $color-1, $blur: $gutter-size/3);
+        z-index: $z-index-button-scroll-to-top;
+        border-radius: $width-button;
+        padding: $gutter-size/2;
+        opacity: 0;
+        color: $color-1;
+        box-shadow: $box-shadow-button;
+        &.--active {
+            opacity: 1;
+        }
+        &:active {
+            box-shadow: none;
+        }
+    }
+    &__row {
+        @include flexbox();
+        .btn {
+            &:first-child {
+                margin-right: $gutter-size;
+            }
+        }
+    }
+
+    @include respond-to(phone) {
+        &.--scroll-to-top {
+            transform: translateY(0);
+            left: $gutter-size;
+        }
+    }
+}

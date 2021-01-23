@@ -1,7 +1,12 @@
-import React from "react"
+import React from 'react';
 
-import { CartProvider } from "./src/contexts/CartProvider"
+import './src/styles/app.scss';
+
+import { QueryParamProvider } from 'use-query-params';
+import { Provider } from './src/contexts/Provider';
 
 export const wrapRootElement = ({ element }) => (
-  <CartProvider>{element}</CartProvider>
-)
+  <QueryParamProvider>
+    <Provider>{element}</Provider>
+  </QueryParamProvider>
+);

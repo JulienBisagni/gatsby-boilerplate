@@ -1,0 +1,12 @@
+//Main sass config files
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/placeholders";
+@import "abstracts/global";
+
+//Main websites components
+@import "components/layout";
+@import "components/buttons";
+
+//Pages
+@import "pages/404";

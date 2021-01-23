@@ -1,14 +1,13 @@
-import React from "react"
-import loadable from "@loadable/component"
+import React from 'react';
+import loadable from '@loadable/component';
 
-const SEO = loadable(() => import("../components/SEO"))
-const Pizzas = loadable(() => import("../components/Pizzas"))
+const SEO = loadable(() => import('../components/SEO'));
 
 export default function Home({ data }) {
   return (
     <>
-      <SEO title="Pizzzeria" />
-      <Pizzas />
+      This is a boiler plate page
+      <SEO />
     </>
-  )
+  );
 }

@@ -1,52 +1,52 @@
-const path = require(`path`)
+const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "http://localhost:8000",
+    siteUrl: 'http://localhost:8000',
   },
   plugins: [
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-sharp`,
-    "gatsby-plugin-netlify",
+    'gatsby-plugin-netlify',
     {
-      resolve: "gatsby-plugin-react-svg",
+      resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
           include: /\.inline\.svg$/,
           omitKeys: [
-            "xmlnsDc",
-            "xmlnsCc",
-            "xmlnsRdf",
-            "xmlnsSvg",
-            "xmlnsSodipodi",
-            "xmlnsInkscape",
+            'xmlnsDc',
+            'xmlnsCc',
+            'xmlnsRdf',
+            'xmlnsSvg',
+            'xmlnsSodipodi',
+            'xmlnsInkscape',
           ],
         },
       },
     },
     {
-      resolve: "gatsby-plugin-sass",
+      resolve: 'gatsby-plugin-sass',
       options: {
         useResolveUrlLoader: true,
-        implementation: require("sass"),
+        implementation: require('sass'),
       },
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Pizzzeria",
-        short_name: "Pizzzeria",
-        start_url: "/",
-        background_color: "#FFFFFF",
-        theme_color: "#FF4242",
-        display: "minimal-ui",
-        icon: "static/favicon.svg",
+        name: 'Boilerplate',
+        short_name: 'Boilerplate',
+        start_url: '/',
+        background_color: '#FFFFFF',
+        theme_color: '#111111',
+        display: 'minimal-ui',
+        icon: 'static/favicon.ico',
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "images",
+        name: 'images',
         path: path.join(__dirname, `src`, `images`),
       },
     },
@@ -54,7 +54,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: "posts",
+        name: 'posts',
         path: `${__dirname}/content/posts/`,
       },
     },
@@ -72,25 +72,25 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: {},
             },
           },
           {
-            resolve: "gatsby-remark-smartypants",
+            resolve: 'gatsby-remark-smartypants',
             options: {
-              dashes: "oldschool",
+              dashes: 'oldschool',
             },
           },
-          "gatsby-remark-autolink-headers",
-          "gatsby-remark-copy-linked-files",
-          "gatsby-plugin-catch-links",
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-plugin-catch-links',
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
-              target: "_blank",
-              rel: "noopener",
+              target: '_blank',
+              rel: 'noopener',
             },
           },
         ],
@@ -112,7 +112,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID",
+        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
@@ -120,7 +120,7 @@ module.exports = {
         // Setting this parameter is also optional
         respectDNT: true,
         // Avoids sending pageview hits from custom paths
-        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        exclude: ['/preview/**', '/do-not-track/me/too/'],
       },
     },
     {
@@ -134,4 +134,4 @@ module.exports = {
     `gatsby-plugin-robots-txt`,
     `gatsby-plugin-offline`,
   ],
-}
+};
